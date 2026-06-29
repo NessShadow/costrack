@@ -1,6 +1,8 @@
 # CosTrack 
 
-A lightweight personal expense tracker built with Flutter. CosTrack lets you log, categorize, and review your daily spending — all in a clean, minimal mobile interface.
+A lightweight personal expense tracker built with Flutter. CosTrack lets you log, categorize, and review your daily spending — all in a clean, minimal, easy-to-use mobile interface.
+
+**This project is a midterm project for "Web/Mobile Application Development" subject of Computer Engineering Department, KOSEN-KMITL.**
 
 ---
 
@@ -85,6 +87,15 @@ Expenses can be tagged with one of the following categories:
 - 🛍️ Shopping
 - 🎬 Entertainment
 - 💳 Others
+
+## Contributing
+Contributions are welcome. Please open issues for bugs or feature requests and submit pull requests for improvements.
+
+## Contributors
+- NessShadow — Repository Owner / Maintainer
+- fahatlegend1 — Contributor
+
+Thanks to everyone who helps improve this project. See the GitHub contributors list for the full history.
 
 ## License
 
