@@ -11,7 +11,7 @@ class CostTrackApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Cos Track',
+      title: 'CosTrack',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.teal),
@@ -55,23 +55,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   // Global central list of expenses for State Management
   final List<ExpenseItem> _expenses = [
-    ExpenseItem(
-      id: '1',
-      title: 'Starbucks Coffee',
-      amount: 180.0,
-      currency: 'THB',
-      date: DateTime.now(),
-      category: 'Food & Drinks',
-    ),
-    ExpenseItem(
-      id: '2',
-      title: 'Taxi to University',
-      amount: 120.0,
-      currency: 'THB',
-      date: DateTime.now().subtract(const Duration(days: 1)),
-      category: 'Transport',
-    ),
-  ];
+     ];
 
   void _addExpense(ExpenseItem newExpense) {
     setState(() {
@@ -92,9 +76,9 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Cos Track Dashboard', style: TextStyle(fontWeight: FontWeight.bold)),
+        title: const Text('CosTrack Dashboard', style: TextStyle(fontWeight: FontWeight.bold)),
         centerTitle: true,
-        backgroundColor: Colors.teal.shade100,
+        backgroundColor: const Color.fromARGB(255, 178, 196, 223),
       ),
       body: Center(
         child: Padding(
@@ -102,10 +86,10 @@ class _HomePageState extends State<HomePage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Icon(Icons.account_balance_wallet, size: 80, color: Colors.teal),
+              const Icon(Icons.account_balance_wallet, size: 80, color: Color.fromARGB(255, 1, 76, 190)),
               const SizedBox(height: 10),
               const Text(
-                'Welcome to Cos Track',
+                'Welcome to CosTrack',
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               ),
               const Text('Track your daily expenses seamlessly.', style: TextStyle(color: Colors.grey)),
@@ -128,7 +112,7 @@ class _HomePageState extends State<HomePage> {
                   icon: const Icon(Icons.add),
                   label: const Text('Add New Cost', style: TextStyle(fontSize: 16)),
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.teal,
+                    backgroundColor: const Color.fromARGB(255, 0, 32, 150),
                     foregroundColor: Colors.white,
                   ),
                 ),
@@ -154,8 +138,8 @@ class _HomePageState extends State<HomePage> {
                   icon: const Icon(Icons.list),
                   label: const Text('My List', style: TextStyle(fontSize: 16)),
                   style: OutlinedButton.styleFrom(
-                    side: const BorderSide(color: Colors.teal, width: 2),
-                    foregroundColor: Colors.teal,
+                    side: const BorderSide(color: Color.fromARGB(255, 0, 17, 150), width: 2),
+                    foregroundColor: const Color.fromARGB(255, 0, 40, 150),
                   ),
                 ),
               ),
@@ -186,7 +170,7 @@ class _NewCostPageState extends State<NewCostPage> {
   String _selectedCategory = 'Food & Drinks';
   DateTime _selectedDate = DateTime.now();
 
-  final List<String> _currencies = ['THB', 'USD', 'EUR', 'JPY'];
+  final List<String> _currencies = ['THB', 'USD', 'EUR', 'JPY', 'Robux'];
   final List<String> _categories = ['Food & Drinks', 'Transport', 'Shopping', 'Entertainment', 'Others'];
 
   Future<void> _pickDate() async {
@@ -208,7 +192,7 @@ class _NewCostPageState extends State<NewCostPage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('New Cost'),
-        backgroundColor: Colors.teal.shade50,
+        backgroundColor: const Color.fromARGB(255, 224, 230, 242),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -304,7 +288,7 @@ class _NewCostPageState extends State<NewCostPage> {
                   const SizedBox(width: 16),
                   Expanded(
                     child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(backgroundColor: Colors.teal, foregroundColor: Colors.white),
+                      style: ElevatedButton.styleFrom(backgroundColor: const Color.fromARGB(255, 0, 20, 150), foregroundColor: Colors.white),
                       onPressed: () {
                         if (_formKey.currentState!.validate()) {
                           final newExpense = ExpenseItem(
@@ -369,7 +353,7 @@ class _CostListPageState extends State<CostListPage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Cost List'),
-        backgroundColor: Colors.teal.shade50,
+        backgroundColor: const Color.fromARGB(255, 224, 229, 242),
       ),
       body: Column(
         children: [
@@ -398,7 +382,7 @@ class _CostListPageState extends State<CostListPage> {
                       value: _currencyFilter,
                       underline: const SizedBox(),
                       icon: const Icon(Icons.money, size: 18),
-                      items: ['All', 'THB', 'USD', 'EUR', 'JPY']
+                      items: ['All', 'THB', 'USD', 'EUR', 'JPY', 'Robux']
                           .map((val) => DropdownMenuItem(value: val, child: Text(val, style: const TextStyle(fontSize: 12))))
                           .toList(),
                       onChanged: (value) => setState(() => _currencyFilter = value!),
@@ -425,7 +409,7 @@ class _CostListPageState extends State<CostListPage> {
             margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
             padding: const EdgeInsets.all(16),
             decoration: BoxDecoration(
-              color: Colors.teal.shade700,
+              color: const Color.fromARGB(255, 0, 18, 121),
               borderRadius: BorderRadius.circular(12),
             ),
             child: Column(
@@ -453,8 +437,8 @@ class _CostListPageState extends State<CostListPage> {
                         margin: const EdgeInsets.only(bottom: 12),
                         child: ListTile(
                           leading: CircleAvatar(
-                            backgroundColor: Colors.teal.shade50,
-                            child: Icon(_getCategoryIcon(item.category), color: Colors.teal),
+                            backgroundColor: const Color.fromARGB(255, 226, 224, 242),
+                            child: Icon(_getCategoryIcon(item.category), color: const Color.fromARGB(255, 0, 10, 150)),
                           ),
                           title: Text(item.title, style: const TextStyle(fontWeight: FontWeight.bold)),
                           subtitle: Text('${item.category} • ${DateFormat('yyyy-MM-dd').format(item.date)}'),
@@ -463,7 +447,7 @@ class _CostListPageState extends State<CostListPage> {
                             children: [
                               Text(
                                 '${item.amount.toStringAsFixed(2)} ${item.currency}',
-                                style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16, color: Colors.teal),
+                                style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16, color: Color.fromARGB(255, 0, 27, 150)),
                               ),
                               const SizedBox(width: 4),
                               IconButton(
@@ -556,7 +540,7 @@ class _EditCostPageState extends State<EditCostPage> {
               ),
               const SizedBox(height: 32),
               ElevatedButton(
-                style: ElevatedButton.styleFrom(backgroundColor: Colors.teal, foregroundColor: Colors.white),
+                style: ElevatedButton.styleFrom(backgroundColor: const Color.fromARGB(255, 0, 30, 150), foregroundColor: Colors.white),
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
                     final updated = ExpenseItem(
